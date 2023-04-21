@@ -1,30 +1,16 @@
-window.onload = function() {
-    // Set the duration of the timer in seconds (1 hour = 60 minutes * 60 seconds = 3600 seconds)
-    var timerDuration = 3600;
-    
-    // Get the timer element from the HTML
-    var timer = document.getElementById("timer");
-    
-    // Get the audio element for the sound effect
-    var audio = new Audio('path/to/sound/file.mp3');
-    
-    // Update the timer every second
-    var interval = setInterval(function() {
-        // Calculate the remaining time
-        var minutes = Math.floor(timerDuration / 60);
-        var seconds = timerDuration % 60;
-        
-        // Display the remaining time on the timer element
-        timer.innerHTML = "Time remaining: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-        
-        // Decrement the remaining time
-        timerDuration--;
-        
-        // If the timer has reached zero, stop the countdown and play the sound effect
-        if (timerDuration < 0) {
-            clearInterval(interval);
-            timer.innerHTML = "Time's up!";
-            audio.play();
-        }
+const countdown = (duration) => {
+    let timer = duration;
+    const interval = setInterval(() => {
+      let minutes = Math.floor(timer / 60);
+      let seconds = timer % 60;
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
+      console.log(`${minutes}:${seconds}`);
+      if (--timer < 0) {
+        clearInterval(interval);
+        console.log("Time's up!");
+      }
     }, 1000);
-};
+  };
+  
+  countdown(60 * 60); // Start a countdown timer for 60 minutes
