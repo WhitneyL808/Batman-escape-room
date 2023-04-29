@@ -35,6 +35,20 @@ function subtract15() {
   }
 }
 
+function checkCondition() {
+  var userInput = document.getElementById("user-input").value.toLowerCase();
+  var names = ["gains", "ed gains", "edward gains"];
+  var messages = ["Nice try, Batman!", "You're the world's greatest detective? Really?", "Ooh, so close! Try Again!", "Have I bested the Dark Knight? Try Harder!", "You really thought that was me? You're not even close!", "I guess your small brain can't handle this one!"];
+  var randomIndex = Math.floor(Math.random() * messages.length);
+  var randomMessage = messages[randomIndex];
+  if (names.includes(userInput)) {
+    window.location.href = "end.html"; // redirect the user to another page
+  } else {
+    alert(randomMessage);
+    subtract15();
+  }
+}
+
 // check if the countdown value is valid, and reset it if not
 if (isNaN(countdown) || countdown < 0) {
   countdown = initialCountdown;
