@@ -73,12 +73,14 @@ function checkClue() {
 function disableButton(buttonNum) {
   var button = document.getElementById("button" + buttonNum);
   button.disabled = true;
+  button.style.border = "none";
   localStorage.setItem("button" + buttonNum + "Disabled", JSON.stringify(true));
 
   var link = document.getElementById("link" + buttonNum);
   var text = link.textContent;
   var paragraph = document.createElement("p");
   paragraph.textContent = text;
+  paragraph.classList.add("disabled-text");
   link.parentNode.replaceChild(paragraph, link);
 }
 
@@ -88,11 +90,13 @@ window.onload = function() {
     var buttonDisabled = JSON.parse(localStorage.getItem("button" + i + "Disabled"));
     if (buttonDisabled === true) {
       button.disabled = true;
+      button.style.border = "none";
 
       var link = document.getElementById("link" + i);
       var text = link.textContent;
       var paragraph = document.createElement("p");
       paragraph.textContent = text;
+      paragraph.classList.add("disabled-text");
       link.parentNode.replaceChild(paragraph, link);
     }
   }
