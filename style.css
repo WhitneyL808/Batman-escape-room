@@ -5,5 +5,48 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
+    background-color: black;
+    color: limegreen;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
+}
+h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 10px;
+}
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+}
+p span {
+    font-weight: 700;
+    font-size: 5rem;
+}
+#timer {
+    margin: 20px;
+}
+button {
+    background-color: black;
+    border: 2px solid limegreen;
+    border-radius: 10px;
+    color: limegreen;
+    font-size: 1rem;
+    height: 40px;
+    width: 80px;
+    margin: 10px;
+}
+input {
+    background-color: limegreen;
+    border: 0;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 40px;
+    width: 240px;
+    padding: 5px;
+    margin: 10px;
 }
