@@ -42,7 +42,7 @@ function checkSolution() {
   var randomIndex = Math.floor(Math.random() * messages.length);
   var randomMessage = messages[randomIndex];
   if (names.includes(userInput)) {
-    window.location.href = "end.html"; // redirect the user to end page
+    window.location.href = "success.html"; // redirect the user to end page
   } else {
     alert(randomMessage);
     subtract15();
@@ -63,8 +63,6 @@ function checkClue() {
     window.location.href = "clue5.html"; // redirect the user to clue5 page
   } else if (userInput === "6") {
     window.location.href = "clue6.html"; // redirect the user to clue6 page
-  } else if (userInput === "7") {
-    window.location.href = "clue7.html"; // redirect the user to clue7 page
   } else {
     alert("I'm not sure where you got that number, Batman!");
   }
